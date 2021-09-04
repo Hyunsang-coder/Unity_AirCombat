@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,8 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
 
-
+    [Header("Sensitivity & Range")]
+    [Tooltip("Adjust the control sensitivity and range")]
     [SerializeField] float xSensitivity = 10;
     [SerializeField] float ySensitivity = 10;
     [SerializeField] float zSensitivity = 10;
@@ -17,6 +19,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float controlPitchFactor = -10f;
     [SerializeField] float positionYawFactor = -10f;
     [SerializeField] float controlRollFactor = -5f;
+    [SerializeField] GameObject[] lasers;
 
     public float xAxis;
     public float yAxis;
@@ -29,8 +32,31 @@ public class PlayerControls : MonoBehaviour
     {
         ProcessTranslation();
         ProcessRotation();
-        
+        ProcessFiring();
+
     }
+
+    private void ProcessFiring()
+    {
+        if (Input.GetButton("Fire1"))
+        {
+            SetLaserActive(true);
+        }
+        else
+        {
+            SetLaserActive(false);
+        }
+    }
+
+    void SetLaserActive(bool isActive)
+    {
+        foreach (GameObject laser in lasers)
+        {
+            var emission = laser.GetComponent<ParticleSystem>().emission;
+            emission.enabled = isActive;
+        }
+    }
+
 
     void ProcessTranslation()
     {
