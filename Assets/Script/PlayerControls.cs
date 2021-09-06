@@ -11,8 +11,8 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float xSensitivity = 10;
     [SerializeField] float ySensitivity = 10;
     [SerializeField] float zSensitivity = 10;
-    [SerializeField] float xRange = 5;
-    [SerializeField] float yRange = 3;
+    [SerializeField] float xRange = 20;
+    [SerializeField] float yRange = 10;
     [SerializeField] float zRange = 3;
 
     [SerializeField] float positionPitchFactor = -2f;
