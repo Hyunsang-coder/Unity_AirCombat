@@ -6,9 +6,11 @@ public class EnemyScript : MonoBehaviour
 {
 
     [SerializeField] GameObject particleVFX;
+    [SerializeField] GameObject hitVFX;
     [SerializeField] Transform parentPosition;
     [SerializeField] public Scoreboard scoreboard;
     [SerializeField] int scorePoint;
+    [SerializeField] int enemyHP = 5;
     
 
     void Start()
@@ -19,13 +21,21 @@ public class EnemyScript : MonoBehaviour
     void OnParticleCollision(GameObject other) // isTrigger 꺼져 있어야 함!
     {
         ProcessHit();
-        KillEnemy();
+        enemyHP--;
+        if (enemyHP < 1)
+        {
+            KillEnemy();
+        }
+            
 
     }
 
     private void ProcessHit()
     {
         scoreboard.IncreaseScore(scorePoint);
+        GameObject hit = Instantiate(hitVFX, transform.position, Quaternion.identity);
+        hit.transform.parent = parentPosition;
+
     }
 
     private void KillEnemy()

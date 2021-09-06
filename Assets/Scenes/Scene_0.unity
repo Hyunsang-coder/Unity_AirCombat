@@ -262,9 +262,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleVFX: {fileID: 3200836327345539238, guid: d2c744d78799a47488ef7b2f880fbb22, type: 3}
-  parentPosition: {fileID: 0}
+  hitVFX: {fileID: 8707580595128733165, guid: a5cd852d7ae22164399b741dd825a0c7, type: 3}
+  parentPosition: {fileID: 416984059}
   scoreboard: {fileID: 0}
-  scorePoint: 0
+  scorePoint: 10
+  enemyHP: 5
 --- !u!65 &325737530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -343,9 +345,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleVFX: {fileID: 3200836327345539238, guid: 912d43568c82ac6458304e31e1bb998c, type: 3}
+  hitVFX: {fileID: 8707580595128733165, guid: a5cd852d7ae22164399b741dd825a0c7, type: 3}
   parentPosition: {fileID: 416984059}
   scoreboard: {fileID: 0}
   scorePoint: 4
+  enemyHP: 5
 --- !u!54 &473725697
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -480,9 +484,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleVFX: {fileID: 3200836327345539238, guid: 912d43568c82ac6458304e31e1bb998c, type: 3}
+  hitVFX: {fileID: 8707580595128733165, guid: a5cd852d7ae22164399b741dd825a0c7, type: 3}
   parentPosition: {fileID: 416984059}
   scoreboard: {fileID: 0}
   scorePoint: 8
+  enemyHP: 5
 --- !u!65 &501914625
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1263,9 +1269,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleVFX: {fileID: 3200836327345539238, guid: d2c744d78799a47488ef7b2f880fbb22, type: 3}
-  parentPosition: {fileID: 0}
+  hitVFX: {fileID: 8707580595128733165, guid: a5cd852d7ae22164399b741dd825a0c7, type: 3}
+  parentPosition: {fileID: 416984059}
   scoreboard: {fileID: 0}
-  scorePoint: 0
+  scorePoint: 3
+  enemyHP: 5
 --- !u!198 &1866208011 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3200836327345539236, guid: d2c744d78799a47488ef7b2f880fbb22, type: 3}
@@ -1289,9 +1297,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleVFX: {fileID: 3200836327345539238, guid: 912d43568c82ac6458304e31e1bb998c, type: 3}
+  hitVFX: {fileID: 8707580595128733165, guid: a5cd852d7ae22164399b741dd825a0c7, type: 3}
   parentPosition: {fileID: 416984059}
   scoreboard: {fileID: 0}
   scorePoint: 10
+  enemyHP: 5
 --- !u!65 &1871869431
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1356,9 +1366,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleVFX: {fileID: 3200836327345539238, guid: 912d43568c82ac6458304e31e1bb998c, type: 3}
+  hitVFX: {fileID: 8707580595128733165, guid: a5cd852d7ae22164399b741dd825a0c7, type: 3}
   parentPosition: {fileID: 416984059}
   scoreboard: {fileID: 0}
   scorePoint: 3
+  enemyHP: 5
 --- !u!54 &1952681442
 Rigidbody:
   m_ObjectHideFlags: 0
