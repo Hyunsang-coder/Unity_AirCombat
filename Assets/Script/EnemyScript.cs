@@ -7,15 +7,22 @@ public class EnemyScript : MonoBehaviour
 
     [SerializeField] GameObject particleVFX;
     [SerializeField] GameObject hitVFX;
-    [SerializeField] Transform parentPosition;
-    [SerializeField] public Scoreboard scoreboard;
     [SerializeField] int scorePoint;
     [SerializeField] int enemyHP = 5;
-    
+    Scoreboard scoreboard;
+    GameObject parentPosition;
 
     void Start()
     {
-        scoreboard = FindObjectOfType<Scoreboard>();    
+        scoreboard = FindObjectOfType<Scoreboard>();
+        parentPosition = GameObject.FindWithTag("ParticleGroup");
+        AddRigidbody();
+    }
+
+    private void AddRigidbody()
+    {
+        Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+        rb.useGravity = false;
     }
 
     void OnParticleCollision(GameObject other) // isTrigger 꺼져 있어야 함!
@@ -34,14 +41,14 @@ public class EnemyScript : MonoBehaviour
     {
         scoreboard.IncreaseScore(scorePoint);
         GameObject hit = Instantiate(hitVFX, transform.position, Quaternion.identity);
-        hit.transform.parent = parentPosition;
+        hit.transform.parent = parentPosition.transform;
 
     }
 
     private void KillEnemy()
     {
         GameObject particles = Instantiate(particleVFX, transform.position, Quaternion.identity);
-        particles.transform.parent = parentPosition;
+        particles.transform.parent = parentPosition.transform;
 
         Destroy(gameObject, 0.5f);
     }

@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 8383720487857597555}
   - component: {fileID: 8393928156275117639}
   - component: {fileID: 8371700057364309255}
+  - component: {fileID: 7047639182346252525}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -403,6 +404,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7047639182346252525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8370948734203331859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22d3d3a76a2b1e4e90c6ce67eabf70b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleVFX: {fileID: 3200836327345539238, guid: 912d43568c82ac6458304e31e1bb998c, type: 3}
+  hitVFX: {fileID: 8707580595128733165, guid: a5cd852d7ae22164399b741dd825a0c7, type: 3}
+  parentPosition: {fileID: 0}
+  scorePoint: 10
+  enemyHP: 5
 --- !u!1 &8371036682123624289
 GameObject:
   m_ObjectHideFlags: 0

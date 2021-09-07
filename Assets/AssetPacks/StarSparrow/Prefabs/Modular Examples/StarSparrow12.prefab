@@ -648,6 +648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4136763724114856}
+  - component: {fileID: 7190379810824076465}
   m_Layer: 0
   m_Name: StarSparrow12
   m_TagString: Untagged
@@ -679,6 +680,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7190379810824076465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227962952135790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22d3d3a76a2b1e4e90c6ce67eabf70b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleVFX: {fileID: 3200836327345539238, guid: 912d43568c82ac6458304e31e1bb998c, type: 3}
+  hitVFX: {fileID: 8707580595128733165, guid: a5cd852d7ae22164399b741dd825a0c7, type: 3}
+  parentPosition: {fileID: 0}
+  scoreboard: {fileID: 0}
+  scorePoint: 7
+  enemyHP: 5
 --- !u!1 &1249285330738458
 GameObject:
   m_ObjectHideFlags: 0
