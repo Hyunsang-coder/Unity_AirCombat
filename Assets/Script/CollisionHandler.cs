@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
-    [SerializeField] float loadTime = 1.5f;
+    [SerializeField] float loadTime = 2f;
     [SerializeField] ParticleSystem explosionVFX;
 
     
@@ -13,16 +13,23 @@ public class CollisionHandler : MonoBehaviour
         StartCrashSequence();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        StartCrashSequence();
+
+    }
+
     void StartCrashSequence()
     {
         explosionVFX.Play();
         GetComponent<PlayerControls>().enabled = false;
+        Destroy(gameObject, 3f);         // gameobject가 먼저 사라지면 Invoke 호출 안됨
         Invoke("ReloadLevel", loadTime);
-        Destroy(gameObject, 0.5f);
     }
 
     void ReloadLevel()
     {
+        Debug.Log("ReloadLevel 함수가 실행되었습니다");
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }

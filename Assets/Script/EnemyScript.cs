@@ -5,17 +5,18 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
 
-    [SerializeField] GameObject particleVFX;
+    [SerializeField] GameObject explosionFX;
     [SerializeField] GameObject hitVFX;
     [SerializeField] int scorePoint;
     [SerializeField] int enemyHP = 5;
+
     Scoreboard scoreboard;
     GameObject parentPosition;
 
     void Start()
     {
         scoreboard = FindObjectOfType<Scoreboard>();
-        parentPosition = GameObject.FindWithTag("ParticleGroup");
+        parentPosition = GameObject.FindWithTag("ParticleGroup");  // 하이어라키 안에서 찾은 첫 번째 오브젝트
         AddRigidbody();
     }
 
@@ -47,10 +48,10 @@ public class EnemyScript : MonoBehaviour
 
     private void KillEnemy()
     {
-        GameObject particles = Instantiate(particleVFX, transform.position, Quaternion.identity);
+        GameObject particles = Instantiate(explosionFX, transform.position, Quaternion.identity);
         particles.transform.parent = parentPosition.transform;
 
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 3f);
     }
 
     
